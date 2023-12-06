@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     
-
 const locationname = document.getElementById("location-input");
 const checkin = document.getElementById("checkin-date");
 const checkout = document.getElementById("checkout-date");
@@ -22,7 +21,7 @@ async function searchdata(){
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '1eba737e6emsh4ccbb6f50f9766ap1ebdccjsndb6541b99697',
+            'X-RapidAPI-Key': '3e43a6e102mshddbd52f1670b63dp1900b6jsnbfff7a4bcf2f',
 		    'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
         }
     };
@@ -72,18 +71,19 @@ function standardsearch(results){
     });
 }
 
-const mapcontainer = document.querySelector(".right-col");
-function displaymap(loc) {
-    const mapdata = document.createElement("div");
-    mapdata.className = "map";
-    mapdata.innerHTML = `<iframe src="https://maps.google.com/maps?q=${loc[0].lat}, ${loc[0].lng}&z=15&output=embed"
-                    src="https://maps.google.com/maps?q=28.56418, 77.25129&z=15&output=embed"
-                    width="360" 
-                    height="500"
-                    frameborder="0"
-                    style="border:0">
+    const mapcontainer = document.querySelector(".right-col");
+    function displaymap(loc) {
+        const mapdata = document.createElement("div");
+        mapdata.className = "map";
+        mapdata.innerHTML = `<iframe src="https://maps.google.com/maps?q=${loc[0].lat}, ${loc[0].lng}&z=15&output=embed"
+                        src="https://maps.google.com/maps?q=28.56418, 77.25129&z=15&output=embed"
+                        width="360" 
+                        height="500"
+                        frameborder="0"
+                        style="border:0">
 
-                </iframe>`
-    mapcontainer.appendChild(mapdata);
-}
+                    </iframe>`
+        mapcontainer.appendChild(mapdata);
+    }
+});
 
